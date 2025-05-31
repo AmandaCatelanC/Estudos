@@ -12,3 +12,11 @@ Estudos de Python para melhor desempenho em análises de dados
 | **Uso em Data Science**| Limitado                                      | Padrão da indústria para computação numérica e científica     |
 | **Funções matemáticas**| Não tem                                       | Tem: `np.mean`, `np.std`, `np.sum`, `np.dot`, etc.           |
 | **Memória**            | Mais ineficiente                              | Mais eficiente (tipagem estática, uso otimizado de memória)  |
+
+
+Formatos de arquivos JSON
+✔️ Caso 1: Lista de objetos (ideal para read_json)
+[
+  {"id": 1, "price": 250000, "area": 120, ...},
+  {"id": 2, "price": 320000, "area": 150, ...}
+]
