@@ -16,7 +16,9 @@ Estudos de Python para melhor desempenho em análises de dados
 
 Formatos de arquivos JSON
 ✔️ Caso 1: Lista de objetos (ideal para read_json)
+<pre> ```
 [
   {"id": 1, "price": 250000, "area": 120, ...},
   {"id": 2, "price": 320000, "area": 150, ...}
 ]
+``` </pre>
