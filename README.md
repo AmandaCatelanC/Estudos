@@ -22,3 +22,30 @@ Formatos de arquivos JSON
   {"id": 2, "price": 320000, "area": 150, ...}
 ]
 </pre>
+Nesse caso:
+<pre>
+df = pd.read_json('house-price.json')
+<pre>
+❌ Caso 2: Objetos linha por linha (JSONL ou NDJSON)
+<pre>
+{"id": 1, "price": 250000, "area": 120, ...}
+{"id": 2, "price": 320000, "area": 150, ...}
+<pre>
+df = pd.read_json('house-price.json', lines=True)
+<pre>
+❌ Caso 3: Objeto com metadados (dicionário grande)
+<pre>
+{
+  "metadata": { "source": "Kaggle", "columns": [...] },
+  "data": [
+    {"id": 1, "price": 250000, "area": 120, ...},
+    {"id": 2, "price": 320000, "area": 150, ...}
+  ]
+}
+<pre>
+Use:
+<pre>
+with open('house-price.json', 'r') as f:
+    raw = json.load(f)
+df = pd.DataFrame(raw['data'])  # ou o nome correto da chave
+<pre>
