@@ -61,3 +61,30 @@ with open('house-price.json', 'r') as f:
     raw = json.load(f)
 df = pd.DataFrame(raw['data'])  # ou o nome correto da chave
 </pre>
+
+✅ 2. Inspeção Inicial
+<pre>
+df.head()             # Primeiras 5 linhas
+df.tail()             # Últimas 5 linhas
+df.shape              # Dimensão do DataFrame (linhas, colunas)
+df.columns            # Nome das colunas
+df.info()             # Tipos de dados + valores nulos
+df.describe()         # Estatísticas descritivas de colunas numéricas
+</pre>
+
+✅ 3. Tratamento de Dados Faltantes
+
+<pre>
+df.isnull().sum()             # Contar valores nulos por coluna
+df.dropna()                   # Remove linhas com valores nulos (use com cuidado)
+df['Coluna'].fillna(valor)   # Preencher nulos com média, mediana, zero etc.
+</pre>
+
+✅ 4. Análise Estatística
+
+<pre>
+df['SalePrice'].mean()        # Média
+df['SalePrice'].median()      # Mediana
+df['SalePrice'].std()         # Desvio padrão
+df.corr(numeric_only=True)    # Matriz de correlação (somente colunas numéricas)
+</pre>
