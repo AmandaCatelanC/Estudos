@@ -88,3 +88,14 @@ df['SalePrice'].median()      # Mediana
 df['SalePrice'].std()         # Desvio padrão
 df.corr(numeric_only=True)    # Matriz de correlação (somente colunas numéricas)
 </pre>
+
+🧩 Mapa de calor de correlações numéricas
+Pergunta: quais variáveis estão mais relacionadas?
+
+<pre>
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.heatmap(df.corr(numeric_only=True), annot=True, cmap="coolwarm")
+plt.show()
+</pre>
